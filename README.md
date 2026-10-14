@@ -36,4 +36,3 @@ docker restart app-container
 - **Part I (Build):** Menggunakan base image `alpine` karena ukurannya yang sangat ringan dan aman, digabungkan dengan kompilasi statis (`CGO_ENABLED=0`) agar binary berdiri sendiri tanpa dependensi shared library dari OS host[cite: 3].
 - **Part II (Deploy):** Menggunakan pendekatan `docker cp` untuk hotfix produksi karena menghemat waktu tanpa harus menarik image baru dari registry, sehingga meminimalkan downtime[cite: 4].
 - **Part III (CI/CD):** Jenkinsfile menggunakan *credentials binding* agar informasi rahasia aman dari hardcode, serta mendukung mekanisme rollback berbasis pencadangan binary lama jika tahap deploy mengalami kendala[cite: 4].
->>>>>>> b89b347 (Initial commit: DevOps Technical Test Simple Journey)
